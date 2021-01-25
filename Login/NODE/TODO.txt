@@ -1,0 +1,12 @@
+- CuentasManager si sucede un error a obtener la cuenta, deberia devolver error para ser justos.
+
+- Activar el time out del socket.
+ALERT: Por ahora no tiene sentido ya que el unico que se conecta es el script de php
+el firewall no permite que la gente se conecte directamente a este puerto. Y ademas
+no se conoce la IP.
+
+
+- Si sabemos que un usuairo no es premium y el acceso a un mundo si... cortamos ahi
+ALERT: Esto no se puede hacer ya que en la creacion de personajes, el login server no tiene forma de
+saber si el usuario es premium o no.
+

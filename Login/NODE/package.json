@@ -1,0 +1,14 @@
+{
+    "name": "LoginServer",
+    "description" : "Servidor del Login Tierras del Sur",
+    "version": "1.0.0",
+    "engines": {
+        "node": "0.10.21",
+        "npm": "1.3.11"
+    },
+    "scripts": {
+        "postinstall": "winser -i -c",
+        "preuninstall": "winser -r -x",
+        "start": "node main.js"
+    }
+}

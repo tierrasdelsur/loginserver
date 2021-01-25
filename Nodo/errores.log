@@ -1,0 +1,52 @@
+************************************************
+****************** ERRROR 1 ********************
+************************************************
+Al parecer solo pasa en Linux.
+
+27/1 20:51:23.977 [INFO]: Cliente conecta desde ip nula
+27/1 20:51:23.977: Error: read ECONNRESET
+Error: read ECONNRESET
+    at errnoException (net.js:901:11)
+    at TCP.onread (net.js:556:19)
+
+27/1 18:11:35.770 [INFO]: Nuevo usuario conectado desde la IP:190.105.5.50
+27/1 18:11:38.771 [INFO]: Cliente: cierra. ID 63 // Cliente ejecuta un close()
+27/1 18:11:38.771 [INFO]: termina sesion. ID:63 // No estaba conectado al server  (*1)
+27/1 18:11:38.771 [INFO]: Libero el Slot: 63 
+27/1 18:11:38.771 [INFO]: Time out para 63 // Se ejecuta el timeout porque e cliente no envio nada (PERO EL SOCKET YA ESTABA CERRADO Y NULO)
+27/1 18:11:38.771 [INFO]: termina sesion. ID:63  El socket es NULL y el Server también es null
+27/1 18:11:38.777 [INFO]: Leo 29 en 0 // LEE, QUE LEE? EL HASH QUE ENVIO ANTES EL CLIENTE? porque tardo tanto en leerlo???
+27/1 18:11:38.777 [INFO]: El usuario 63 quiere loguear con el HASH wFAfWeEVr50A6ASuV0sz hacia la IP 181.119.28.114
+27/1 18:11:38.777 [INFO]: El socket cliente es nulo!. Hash wFAfWeEVr50A6ASuV0sz //POR QUE LO = NULL EN  (*1)
+27/1 18:11:38.777 [INFO]: termina sesion. ID:63
+27/1 18:11:38.791 [INFO]: Cliente: cierra. ID 63 // ¿Otra vez se llama al listener del end del socket cliente????
+27/1 18:11:38.791 [INFO]: termina sesion. ID:63 
+
+
+•Porque se llama al listen del server cuando el cliente se desconecto?
+
+Node va guardando los eventos en una lista, con referencia al FILE DESCRIPTOR del socket, 
+cuando se desconecta el cliente, se destruye el file 
+descriptor pero en la lista de eventos de node no se borran los eventos ya cargados??
+************************************************
+****************** ERRROR 2 ********************
+************************************************
+• ¿Por qué el socket cuando se quiere desactivar el setTimeOut() se vuelve nulo?
+Como puede ser si viene justo después del procesar? 
+Cuál es la pausa que puede genera que el socket se vuelva nulo?
+¿EL ERROR 1 ESTA RELACIONADO?
+
+************************************************
+****************** ERRROR 3 ********************
+************************************************
+• ¿Por qué carajo el nodo recibe un paquete luego de que ya leyo el hash?
+
+"Llego paquete cuando no correspondia."
+
+28/1 13:58:29.46 [INFO]: Servidor: cierra.
+28/1 13:58:29.47 [INFO]: termina sesion. ID:192
+28/1 13:58:29.47 [INFO]: - Usuarios online: 268
+28/1 13:58:29.47 [INFO]: Libero el Slot: 192
+28/1 13:58:29.104 [ERROR]: Llego paquete cuando no correspondia.192 //Proceso un paquete cuando ya habia liberado al socket
+
+El servidor me cierra, y antes de avisarle al cliente, este me sigue enviando datos?

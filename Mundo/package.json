@@ -1,0 +1,11 @@
+{
+  "name": "mundo",
+  "version": "1.0.0",
+  "description": "Editor json: http://jsonlint.com/ /**********************************************************/ /**************** CONF MUNDO ******************************/ {     \"id\":      \tEntero. Identificador unico del mundo.     \"nombre\":     \t String. Nombre que recibe el mundo,     \"premium\":  \t\tBooleano. Indica si el mundo es solo accesible para usuarios Premium.     \"base\": {         \"host\":         \t\tString. IP donde se encuentra la base de datos.        \t\"port\":        \t\tEntero. Puerto en donde se encuentra escuchando la base de datos.         \"user\":          \tString. Usuario para validarse frente a la base de datos.         \"password\":          \tString. Clave para validarse frente a la base de datos.         \"database\":          \tString. Base de datos en donde se encuentran las tablas a utilizar         \"queueLimit\": ,         \tEntero. Cantidad de conexiones que pueden estar en la cola          \ta la espera de ser atendidas por el motor del node-mysql.         \"connectionLimit\":          \tEntero. Cantidad de conexiones que pueden ser atendidas al mismo tiempo          \tpor el motor del node-mysql.     } } ************************************************************** ************************************************************** ************************************************************** La base de datos debe tener permisos: - Tabla de usuarios:  --- Lectura sobre \"usuarios\" ID, IDCUENTA, ONLINE, NICKB, PASSWORD. --- Insercion sobre \"loginservers_permisos\"",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

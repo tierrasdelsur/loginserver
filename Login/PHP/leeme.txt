@@ -1,0 +1,5 @@
+Este simple script permite que las distintas aplicaciones que se conecten al Loginserver
+lo puedan utilizar usando el protocolo HTTP pudiendo poner el LoginServer en
+a) Detras de un CDN como cloudflare o AWS.
+b) Hacer un CDN casero poniendo el script en wev hosting berretas (no vps) sin necesidad de que estos admitas aplicaciones en node.js. Además al estar en un hosting compartido, si se recibe un ataque afecta a todas las webs y no queda rastro que el ataque 
+es hacia nosotros. A excepcion de que el ataque sea un ataque http.

@@ -1,0 +1,21 @@
+NODO
+
+- Que hacer con los usuarios nuevos que loguean. ¿Slot libre?
+- Que hacer con los clientes que desconectan?
+
+- Implementar el cerrar del Nodo.
+
+- Que el Nodo escuche en una lista de IPS/Puertos a los clientes y no en una sola ip/puerto.
+* ALERTA: para esto se necesita que el nodo tenga varios servidores de escucha abiertos y no uno solo como ahora. 
+Se deja para un futuro por posibles complicaciones que puedan suceder.
+
+
+
+BUGS: 
+- Cuando el servidor hace
+
+1- Enviar info.
+2- Cerrar
+
+El paquete 1 es enviado por el nodo pero nunca llega al cliente. Pareciese que cuando ejecuta
+el end() el node se cancela un envio que estaba pendiente.

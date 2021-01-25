@@ -1,0 +1,14 @@
+{
+  "name": "login-server-comun",
+  "version": "1.0.0",
+  "description": "Elementos comunes entre las distintas partes del Login Server",
+  "main": "Auditoria.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "log4js": "^1.1.0"
+  }
+}

@@ -1,0 +1,5 @@
+- Firewall.
+- Auditoria: para detectar cosas raras y que bloquee IPS.
+- El empaquetadorOUT, algunos chequeos )no abrir un paquete si ya hay otro abierto, 
+poner el identificador del apquete en el nuevoPaquete(idpaquete o 0) con el objetivo de abstrarserse
+que el id del paquete es un int.
