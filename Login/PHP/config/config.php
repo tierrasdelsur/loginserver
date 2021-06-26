@@ -1,7 +1,8 @@
 <?php
+$config_ErrorPage = '';
+
 $config = [ 
-	"ip" => '192.168.134.135',
-	"puerto" => 9999
-]
-;
+		"ip" => '127.0.0.1',
+		"puerto" => 9999 
+];
 ?>
